@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this website source, please cite it as below. This is just for a technology demonstration."
+authors:
+  - family-names: "Tripathee"
+    given-names: "Yuil"
+    orcid: "https://orcid.org/
+0000-0001-9210-0778"
+title: "YuilTripathee/yoPlatformDocs: On trail"
+version: 0.0.1
+doi: 10.5281/zenodo.6468786
+date-released: 2022-04-19
+url: "https://github.com/YuilTripathee/yoPlatformDocs"
