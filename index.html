@@ -39,9 +39,17 @@
   </head>
   <body class="bgimg w3-text-white">
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+      <!-- top left logo part-->
       <div class="w3-display-topleft w3-padding-large w3-xlarge">
         yoPlatform
       </div>
+
+      <!-- top right part to display system time -->
+      <div class="w3-display-bottomright w3-padding-large w3-hide-small">
+        <p id="time" class="w3-center"></p>
+      </div>
+
+      <!-- middle part (large text section)-->
       <div class="w3-display-middle">
         <div class="w3-center w3-animate-top">
           <h1
@@ -115,7 +123,7 @@
       </div>
 
       <!-- right corner for links (YouTube, GitHub)-->
-      <div class="w3-display-bottomright w3-padding-large w3-hide-small">
+      <div class="w3-display-topright w3-padding-large w3-hide-small">
         <a
           href="https://www.youtube.com/channel/UCz9JP0KpjOtxjSuSNYhuz6Q"
           target="new"
@@ -160,6 +168,7 @@
       </div>
     </div>
 
+    <!-- large text animation script -->
     <script type="text/javascript">
       var TxtType = function (el, toRotate, period) {
         this.toRotate = toRotate;
@@ -220,6 +229,31 @@
           ".typewrite > .wrap { border-right: 0.03em solid #fff; animation: caret 1s steps(1) infinite;}";
         document.body.appendChild(css);
       };
+    </script>
+
+    <!-- system time rendering script -->
+    <script type="text/javascript">
+      (function () {
+        function checkTime(i) {
+          return i < 10 ? "0" + i : i;
+        }
+
+        function startTime() {
+          var today = new Date(),
+            mo = today.toLocaleString("default", { month: "short" }),
+            da = today.getDay(),
+            yr = today.getFullYear(),
+            h = checkTime(today.getHours()),
+            m = checkTime(today.getMinutes()),
+            s = checkTime(today.getSeconds());
+          document.getElementById("time").innerHTML =
+            h + ":" + m + ":" + s + "<br/>" + mo + " " + da + ", " + yr;
+          t = setTimeout(function () {
+            startTime();
+          }, 500);
+        }
+        startTime();
+      })();
     </script>
   </body>
 </html>
